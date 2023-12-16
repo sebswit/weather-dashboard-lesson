@@ -1,91 +1,49 @@
 
+
 // create a variable to store the city name
 var city = $("#search-input").val();
 // create a variable to store API key
 const apiKey = "";
 // create a variable to store the queryURL
-var queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=imperial&appid=' + apiKey;
+var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + apiKey;
 // create a variable to store the search history
 var searchHistory = [];
 // create a variable to store the current date
-var currentDate = moment().format('L');
+var currentDate = date.js().format('L');
    // use a data.js 
 
-// create a variable to store the current weather
-var currentWeather = data.currentWeather;
-// create a variable to store the forecast
-var forecast = data.forecast;
-// create a variable to store the temperature
-var temp = data.temp;
-// create a variable to store the icon
-var icon = data.icon;
-// create a variable to store the humidity
-var humidity = data.humidity;
-// create a variable to store the wind speed
-var windSpeed = data.windSpeed;
+// event listener for search button
+$("#search-button").on("click", function(event) {
+  event.preventDefault();
+  // get the city name from the input field
+  var city = $("#search-input").val();
+  // add the city name to the search history
+  searchHistory.push(city);
+  // save the search history to local storage
+  localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+  // call the getWeather function
+  getWeather();
+});
 
-// Function to get data from openweather
-function getWeather() {
-    // fetch data from openweather
-    fetch(queryURL)
-    // parse data
-    .then(function (response) {
-        return response.json();
-    })
-    // display data
-    .then(function (data) {
-        // update HTML
-        // update current weather
-        // update date
-        // update city name
-        // update 5 day forecast
-        // update search history
-        // update humidity
-        // update wind speed
-        // update forecast
-        // update date
-        // update icon
-        // update temp
-        // update humidity
-        // save to local storage
-        // check if city is in local storage
-        // if not, add city to local storage
-        // if yes, do nothing
-        // get data from local storage
-        // display data
-    });
-}
-
-// get data from form
-    // get city name from form
-    
-    // function to validate form 
-    // clear form
-    $("#city").val("");
-    //
-// fetch data from openweather
-fetch(queryURL)
+// Function to get data from openweather for current weather
+// data for current weather 
+  // city name
+  // date
+   // weather icon
+   // temperature
+   // humidity
+   // wind speed
 
 
-   // fetch(queryURL)
-   // parse data
-   // display data
-// update HTML
-  // update current weather
-    // update date
-    // update city name
-    // update 5 day forecast
-    // update search history
-    // update humidity
-    // update wind speed
- // update forecast
-    // update date
-    // update icon
-    // update temp
-    // update humidity
- // save to local storage
-   // check if city is in local storage
-    // if not, add city to local storage
-    // if yes, do nothing
- // get data from local storage
-    // display data
+// Function to get data from openweather for 5 day forecast
+// data for 5 day forecast
+  // date
+  // weather icon
+  // temperature
+  // humidity
+
+
+// function to display data on page
+  // create card for current wather
+   // create card for 5 day forecast
+// 
