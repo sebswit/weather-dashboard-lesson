@@ -1,5 +1,5 @@
 
-var city = $("#search-input").val(); // Use .val() instead of .value to get the value of an input field
+ // Use .val() instead of .value to get the value of an input field
 document.addEventListener('DOMContentLoaded', function () {
 // create a variable to store API key
 const APIKey = "00be002f543021f3f037894c47ccc2ac";
@@ -7,6 +7,7 @@ const APIKey = "00be002f543021f3f037894c47ccc2ac";
 
 // Function to handle and update HTML with current weather data
 function getCurrentWeather(city) {
+  var city = $("#search-input").val();
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`
   )
@@ -20,7 +21,7 @@ function getCurrentWeather(city) {
 function updateCurrentWeather(data) {
   const todaySection = document.getElementById('today');
   const cityNameElement = document.getElementById('city-name');
-  const temperatureElement = document.getElementById('temperature');
+  const temperatureElement = document.getElementById('temperature');// convert to Celsius
   const humidityElement = document.getElementById('humidity');
   const windSpeedElement = document.getElementById('wind-speed');
 
@@ -104,4 +105,9 @@ searchForm.addEventListener('submit', handleFormSubmission);
 
 });
 
+// known issues:
+// not displaying 5 day forecast
+// not displaying search history
+// update CSS
+// convert temp to Celsius
 
