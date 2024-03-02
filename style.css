@@ -8,16 +8,30 @@
     background-color: rgba(255,255,255,0.8);
     z-index: 100;
 }
+
 .temperature {
     font-size: 1.5em;
     margin: 0;
-    
 }
+
 .wind-speed {
     font-size: 1.5em;
     margin: 0;
 }
+
 .humidity {
     font-size: 1.5em;
     margin: 0;
-}   
+}
+
+.forecast-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.forecast-tile {
+    flex-basis: 20%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
 <html lang="en-gb">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css" />
   <title>Weather Dashboard</title>
 </head>
@@ -25,10 +25,10 @@
         <form id="search-form" class="form">
           <div class="form-inline form-group">
             <div class="input-group">
-              <input class="form-input weather-search" type="text" id="search-input" placeholder="Pleaase enter a city name"
+              <input class="form-control weather-search" type="text" id="search-input" placeholder="Please enter a city name"
                 aria-labelledby="form-heading" aria-controls="today forecast" />
               <div class="input-group-append">
-                <button type="submit" class="btn search-button" id="search-button" aria-label="submit search">
+                <button type="submit" class="btn btn-primary search-button" id="search-button" aria-label="submit search">
                   Search
                 </button>
                 <hr class="hr weather-hr" />
@@ -44,45 +44,27 @@
           <h2 class="h3" id="city-name"></h2>
           <div class="weather-details">
             <div class="temperature">
-              <i class="fa-solid fa-temperature-three-quarters"></i>
-              <span id="temperature"></span>
-              <p>Temperature</p>
+              <i class="fas fa-thermometer-three-quarters"></i>
+              <span id="current-temperature"></span>
+              
             </div>
             <div class="humidity">
-              <i class ="fa-solid fa-water"></i>
-              <span id="humidity"></span>
-              <p>Humidity</p>
+              <i class="fas fa-tint"></i>
+              <span id="current-humidity"></span>
+              
             </div>
             <div class="wind-speed">
-              <i class="fa-solid fa-wind"></i>
-              <span id="wind-speed"></span>
-              <p>Wind Speed</p>
-          </div>
+              <i class="fas fa-wind"></i>
+              <span id="current-wind-speed"></span>
+              
             </div>
           </div>
         </section>
 
         <section id="forecast" class="row mt-3" role="region" aria-live="polite">
-        <div class="weather-details">
-         
-          <div class="temperature">
-            <i class="fa-solid fa-temperature-three-quarters"></i>
-            <span id="Temperature"></span>
-            <p>Temperature</p>
-          </div>
-          <div class="wind-speed">
-            <i class="fa-solid fa-wind"></i>
-            <span id="wind-speed"></span>
-            <p>Wind Speed</p>
-        </div>
-        <div class="humidity">
-          <i class ="fa-solid fa-water"></i>
-          <span id="humidity"></span>
-          <p>Humidity</p>
-        </div>
-
+          <!-- Forecast items will be dynamically added here -->
+        </section>
       </div>
-    </section>
     </div>
   </div>
   <script src="https://kit.fontawesome.com/4fe07cf3a9.js" crossorigin="anonymous"></script>
